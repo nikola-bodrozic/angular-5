@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'nb-login',
@@ -15,7 +15,11 @@ import { Router } from "@angular/router";
   styles: []
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(
+    private router: Router, 
+    private authService: AuthService, 
+    private route: ActivatedRoute
+   ) { }
 
   ngOnInit() {
   }
@@ -23,8 +27,10 @@ export class LoginComponent implements OnInit {
   signIn(credentials) {
     this.authService.login(credentials)
       .subscribe(result => { 
-        if (result) 
-          this.router.navigate(['/admin']);
+        if (result) {
+          let returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
+          this.router.navigate([returnUrl || '/']);          
+        }
         else
           this.router.navigate(['/login']);
       });
