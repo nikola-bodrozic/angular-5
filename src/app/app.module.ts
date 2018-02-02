@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdminComponent } from './admin/admin.component';
+import { SentinelService } from './services/sentinel.service';
 
 
 @NgModule({
@@ -27,11 +28,11 @@ import { AdminComponent } from './admin/admin.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'admin', component: AdminComponent },      
+      { path: 'admin', component: AdminComponent, canActivate:[SentinelService] },      
       { path: 'logout', component: LogoutComponent }
     ])    
   ],
-  providers: [AuthService],
+  providers: [AuthService, SentinelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
