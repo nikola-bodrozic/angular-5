@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { LogoutComponent } from './logout/logout.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    LogoutComponent
+    LogoutComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { LogoutComponent } from './logout/logout.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'admin', component: AdminComponent },      
       { path: 'logout', component: LogoutComponent }
     ])    
   ],

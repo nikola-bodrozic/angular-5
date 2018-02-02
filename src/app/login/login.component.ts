@@ -23,7 +23,10 @@ export class LoginComponent implements OnInit {
   signIn(credentials) {
     this.authService.login(credentials)
       .subscribe(result => { 
-        if (result) this.router.navigate(['/']);
+        if (result) 
+          this.router.navigate(['/admin']);
+        else
+          this.router.navigate(['/login']);
       });
   }
 }

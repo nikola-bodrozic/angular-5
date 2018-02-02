@@ -9,6 +9,7 @@ import { AuthService } from './services/auth.service';
     </h1>
     <nav>
       <a routerLink="/" routerLinkActive="active">Home</a>
+      <a routerLink="/admin" routerLinkActive="active">Admin</a>
       <a *ngIf="!this.as.isLoggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
       <button *ngIf="this.as.isLoggedIn()" (click)="this.as.logout()">Logout</button>
       <span>Hello {{ this.as.getUsername() }}</span>

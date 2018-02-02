@@ -26,7 +26,7 @@ export class AuthService {
 
   logout() { 
     localStorage.clear();
-    this.router.navigate(['/loggedout']);    
+    this.router.navigate(['/logout']);    
   }
 
   isLoggedIn() { 
@@ -35,7 +35,7 @@ export class AuthService {
     var expired = this.jwtHelper.isTokenExpired(token);
     return !expired;
   }
-  
+
   getUsername(){
     var token = localStorage.getItem('token');
     if(token == null){
