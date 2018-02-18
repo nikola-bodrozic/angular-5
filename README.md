@@ -6,6 +6,9 @@
 * copy file i4.php in `/var/www/html` file has to available on `http://localhost/i4.php`
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
 
+## tests
+* run `ng e2e` to run protractor end 2 end tests
+
 ## Features
 * authorisation with JWT. The backend code is in file i4.php
 * submitting form

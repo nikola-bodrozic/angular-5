@@ -7,9 +7,9 @@ import { Router, ActivatedRoute } from "@angular/router";
   template: `
 <form #f="ngForm" (ngSubmit)="signIn(f.value)">
   <h2>Please sign in</h2>
-  <input type="email" id="inputEmail" name="email" ngModel placeholder="Email address" required autofocus>
-  <input type="password" id="inputPassword" name="password" ngModel placeholder="Password" required>
-  <button type="submit">Sign in</button>
+  <input type="email" id="email" name="email" ngModel placeholder="Email address" required autofocus>
+  <input type="password" id="password" name="password" ngModel placeholder="Password" required>
+  <button type="submit" id="submit">Sign in</button>
 </form>
   `,
   styles: []
