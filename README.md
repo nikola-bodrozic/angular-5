@@ -1,5 +1,11 @@
 # Angular 5 
 
+## Docker
+docker build -t ang5dock .
+docker run -it -v ${PWD}:/usr/src/app -p 4200:4200 ang5dock
+docker start 01579dee
+docker stop 01579dee 
+
 ## Install
 * in project folder run `npm install` to get Node dependancies
 * run `composer require lcobucci/jwt` in `/var/www/html` to install PHP library for JWT token
